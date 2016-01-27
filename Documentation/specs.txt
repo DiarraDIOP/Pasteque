@@ -1,0 +1,11 @@
+
+Reconstruction de l'interface pasteque
+	Logiciel opensource pour des caisses
+
+Il existe une interface en java
+	A reproduire en html5
+	Interface tactile ==> attention au manip des objets
+
+Philippe Pary = chef de projet PASTEQUE
+
+Licence: GLPV3
