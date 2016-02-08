@@ -1,6 +1,11 @@
-.btn-block {
-display: block;
-width: 200%;
-margin-top: 380px;
+#fermeture_caisse.btn-block {
+	display: block;
+	width: 200%;
+	margin-top: 380px;
 
 }
+
+.navbar-default {
+  	background-color:#2E364A; /*#384565*/
+ }
+
