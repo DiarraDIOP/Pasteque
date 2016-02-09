@@ -8,4 +8,16 @@
 .navbar-default {
   	background-color:#2E364A; /*#384565*/
  }
+ 
+#ticket{
+   position: absolute;
+   top: 10px;
+   left: 150px;
+}
 
+#p1{
+	position: absolute;
+   top: 300px;
+   left: 750px;
+
+}
