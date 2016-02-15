@@ -1,7 +1,7 @@
 #fermeture_caisse.btn-block {
 	display: block;
-	width: 200%;
-	margin-top: 380px;
+	width: 100%;
+
 
 }
 
@@ -16,12 +16,9 @@
 }
 
 #p1{
-	position: absolute;
-   top: 300px;
-   left: 750px;
-
+	margin:0 auto;
+	float : none;
 }
-
 .mdp {
 height: 35px;
 width:300px;
@@ -37,6 +34,10 @@ border: 1px solid;
 border-color: gray;
 border-radius: 5px;
    	
+}
+.col-centered{
+	margin: 0 auto;
+	float: none;
 }
 
 
