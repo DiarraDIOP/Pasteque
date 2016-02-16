@@ -1,0 +1,99 @@
+
+
+#container {
+    font-size: 32px;
+    margin: 128px auto;
+    width: 768px;
+}
+
+
+#calculator, #number, .buttons {
+    border-radius: 6px;
+}
+
+#calculator {
+    margin: 0 auto;
+    background-color: #ECEEF3;
+    border: 1px solid #3D3D3D;
+    width: 350px;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, .8);
+}
+
+#header {
+    border-top: 1px solid #777;
+    border-radius: 6px 6px 0 0;
+    padding: 10px;
+}
+
+input#number {
+    text-align: right;
+    background-color: #ECEEF3;
+    border-bottom: 1px solid #333333;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    color: black;
+    font-size: 40px;
+    padding: 16px;
+    width: 280px;
+}
+
+input#number:focus {
+    outline: none;
+}
+
+#body {
+    padding: 0 10px;
+}
+
+.buttons {
+    cursor: default;
+    text-align: center;
+    padding: 10px 22px;
+    font-size: 40px;
+    color: #ECEEF3;
+    font-weight: bold;
+    display: inline-block;
+    /* border-top: 1px solid #1c0be0; */
+    width: 60px;
+    background: linear-gradient(#83B8EF 0%, #2A63E4 100%);
+    margin-bottom: 10px;
+}
+
+#buttons-Encaisser {
+    cursor: default;
+    text-align: center;
+    padding: 10px 22px;
+    font-size: 40px;
+    color: #ECEEF3;
+    font-weight: bold;
+    display: inline-block;
+    /* border-top: 1px solid #1c0be0; */
+    width: 170px;
+    background: linear-gradient(#F78F0E 0%, #F78F0E 100%);
+    margin-bottom: 10px;
+}
+
+#buttonsX {
+    cursor: default;
+    text-align: center;
+    padding: 10px 22px;
+    font-size: 40px;
+    color: #ECEEF3;
+    font-weight: bold;
+    display: inline-block;
+    /* border-top: 1px solid #1c0be0; */
+    width: 60px;
+    background: linear-gradient(#777 0%, #777 100%);
+    margin-bottom: 10px;
+}
+
+.buttons:hover {
+    background: linear-gradient(#777 0%, #777 100%);
+    border-top: 1px solid #777;
+    text-shadow: 0 -1px 1px #777;
+}
+
+.buttons:active {
+    box-shadow: none;
+}
