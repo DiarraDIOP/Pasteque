@@ -1,12 +1,9 @@
 #fermeture_caisse.btn-block {
 	display: block;
-	width: 100%;
-
-
 }
 
 .navbar-default {
-  	background-color:#2E364A; /*#384565*/
+  	background-color:#2E364A; 
  }
  
 #ticket{
