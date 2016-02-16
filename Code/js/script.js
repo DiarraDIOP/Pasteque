@@ -5,7 +5,7 @@ $(document).ready(function(){
 }); 
 
 $(document).ready(function(){ 
-  $.get("include/nav.html", function(data) {
-    $("#nav").html(data);
+  $.get("include/catalogue.html", function(data) {
+    $("#catalogue").html(data);
   });
 }); 
