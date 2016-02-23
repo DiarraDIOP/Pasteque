@@ -1,44 +1,10 @@
-#fermeture_caisse.btn-block {
-	display: block;
-}
-
-.navbar-default {
-  	background-color:#2E364A; 
- }
- 
-#ticket{
-   position: absolute;
-   top: 10px;
-   left: 150px;
-}
-
-#p1{
-	margin:0 auto;
-	float : none;
-}
-.mdp {
-height: 35px;
-width:300px;
-border: 1px solid;
-border-color: gray;
- border-radius: 5px;
-  
-}
-.user {
-height:35px;
-width:300px;
-border: 1px solid;
-border-color: gray;
-border-radius: 5px;
-   	
-}
-.col-centered{
-	margin: 0 auto;
-	float: none;
-}
 
 
-
+#container {
+    font-size: 32px;
+    margin: 128px auto;
+    width: 768px;
+}
 
 
 #calculator, #number, .buttons {
@@ -46,16 +12,23 @@ border-radius: 5px;
 }
 
 #calculator {
-    width: 45%;
-    font-size: 32px;
-    margin:  auto auto;
+    margin: 0 auto;
+    background-color: #ECEEF3;
+    border: 1px solid #3D3D3D;
+    width: 350px;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, .8);
 }
 
+#header {
+    border-top: 1px solid #777;
+    border-radius: 6px 6px 0 0;
+    padding: 10px;
+}
 
 input#number {
     text-align: right;
-    background-color: white;
-    border-bottom: none;
+    background-color: #ECEEF3;
+    border-bottom: 1px solid #333333;
     border-left: none;
     border-right: none;
     border-top: none;
@@ -82,20 +55,21 @@ input#number:focus {
     font-weight: bold;
     display: inline-block;
     /* border-top: 1px solid #1c0be0; */
-    width: 30%;
+    width: 60px;
     background: linear-gradient(#83B8EF 0%, #2A63E4 100%);
     margin-bottom: 10px;
 }
 
 #buttons-Encaisser {
     cursor: default;
+    text-align: center;
     padding: 10px 22px;
-    font-size: 35px;
+    font-size: 40px;
     color: #ECEEF3;
     font-weight: bold;
     display: inline-block;
     /* border-top: 1px solid #1c0be0; */
-    width: 75%;
+    width: 170px;
     background: linear-gradient(#F78F0E 0%, #F78F0E 100%);
     margin-bottom: 10px;
 }
@@ -104,7 +78,7 @@ input#number:focus {
     cursor: default;
     text-align: center;
     padding: 10px 22px;
-    font-size: 35px;
+    font-size: 40px;
     color: #ECEEF3;
     font-weight: bold;
     display: inline-block;
@@ -123,5 +97,3 @@ input#number:focus {
 .buttons:active {
     box-shadow: none;
 }
-
-

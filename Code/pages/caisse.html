@@ -33,25 +33,55 @@
 
         <script type="text/javascript" src="../js/script.js"></script>
 
+
+        
     </head>
 <body>
 
     <div id="wrapper">
         <!-- Navigation -->
        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0"> 
-         <div id="header"></div>
+         <div id="header">
+         </div>
+         <div id="catalogue">
+         </div>
        </nav>
-    
     </div>
 
-    <section>      
-        <div class="row">
-              <div class="col-md-4"><div id="catalogue"></div></div>
-              <div class="col-md-4"><div id="ticket"> partie ticket</div></div>
-              <div class="col-md-4"><div id="calculatrice">partie calculatrice </div></div>
+       <div>
+                <div class="row">
+                    <div class="col-lg-12">                       
+                    </div>
+                </div>                
+                <div class="row">
+                    <div class="col-lg-6">
+                    </div>
+                    
+                    <div class="col-lg-6">
+                     <div > Mode de paiement</div>
+            <div id="calculator">
+                <div id="head">
+                    <input type="text" id="number" value="0" autocomplete="off" disabled />
+                </div>
+                <div id="body">
+                    <div class="buttons">1</div>
+                    <div class="buttons">2</div>
+                    <div class="buttons">3</div>
+                    <div class="buttons">4</div>
+                    <div class="buttons">5</div>
+                    <div class="buttons">6</div>
+                    <div class="buttons">7</div>
+                    <div class="buttons">8</div>
+                    <div class="buttons">9</div>
+                    <div class="buttons">0</div>
+                    <div class="buttons">.</div>
+                    <div class="buttons">.00</div>
+                    <div id="buttonsX" class="buttons">X</div>
+                    <div id="buttons-Encaisser"class="buttons">Encaisser</div>
+                </div>
+            </div>          
+                    </div>
         </div>
-    </section>
-
 
     <!-- jQuery -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
@@ -70,6 +100,13 @@
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
+<script type="text/javascript" src="../dist/js/main.js"></script>
+<script type="text/javascript">
+            $(document).ready(function() {
+                var calculatrice = new Calculator();
+                calculatrice.run();
+            });
+        </script>
 </body>
 
 </html>
