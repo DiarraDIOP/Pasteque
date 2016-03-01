@@ -31,6 +31,7 @@
         <script type="text/javascript" src="../js/jquery-2.2.0.min.js"></script>
 
         <script type="text/javascript" src="../js/script.js"></script>
+        
 
     </head>
 <body>
@@ -84,7 +85,7 @@
                             </div>
                             <div class="form-group">
                             <div class="col-sm-12">
-                                <input class="mdp" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password">
 
                             </div>
                             </div>                             
@@ -92,14 +93,14 @@
                             <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                             <label>
-                                <input type="checkbox"> Afficher le mot de passe
+                                <input id="showcharacters" name="showcharacters" type="checkbox"> Afficher le mot de passe
                             </label>
                             </div>
                             </div>
                             </br>
-                            </br>
+                            </div>
                             <div class="col-sm-12">
-                            <button id="btn" type="submit" class="btn btn-danger">Se connecter</button>
+                            <button id="btn" type ="submit" class="btn btn-danger" onclick="window.location.href='index.html'">Se connecter</button>
                             </div>
                             </div>
                             <div class="form-group">
@@ -125,10 +126,10 @@
                     
                     </div>
                     <div class="col-lg-2">
-                    <button id="btn" type="submit" class="btn btn-danger">S'inscrire</button>
+                    <button id="btn" type="submit" class="btn btn-danger" onclick="window.location.href='https://my.pasteque.coop/wp-login.php?action=register'">S'inscrire</button>
                     </div>
                     <div class="col-lg-2">
-                    <button id="btn" type="submit" class="btn btn-danger">Démonstration</button>
+                    <button id="btn" type="submit" class="btn btn-danger" onclick="window.location.href='page_màj.html'">Démonstration</button>
                        
                     </div>
                     <div class="col-lg-4">
