@@ -1,3 +1,22 @@
+
+.slideshow {
+   width: 350px;
+   height: 122px;
+   overflow:auto;
+   border: 3px solid #F2F2F2;
+}
+
+.slideshow ul {
+    /* 4 images donc 4 x 100% */
+   width: 190%;
+   height: 100px;
+   padding:0; margin:0;
+   list-style: none;
+}
+.slideshow li {
+   float: left;
+}
+
 #fermeture_caisse.btn-block {
 	display: block;
 }
