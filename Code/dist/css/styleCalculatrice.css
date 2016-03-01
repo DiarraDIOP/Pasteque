@@ -1,5 +1,9 @@
 
-
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
 #container {
     font-size: 32px;
     margin: 128px auto;
