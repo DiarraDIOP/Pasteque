@@ -1,18 +1,12 @@
-<?php
-if(!isset($_GET['login']) && !isset($_GET['motdepasse']))
-{
-    header('Location: page_connexion.html');
-    Exit;
-}
-else
-{
 
-}
-?>
 <?php
+
 if(!isset($_GET['login']) && !isset($_GET['motdepasse']))
 {
-    header('Location: page_connexion.html');
+    header('Location: index.html');
+    session_start();
+    echo '<SCRIPT LANGUAGE="JavaScript">document.location.href="index.html"
+</SCRIPT>';
 }
 else
 {
