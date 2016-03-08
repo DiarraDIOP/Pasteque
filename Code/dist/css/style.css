@@ -62,8 +62,6 @@ border-radius: 5px;
 
 }
 
-
-
 #calculator, #number, .buttons {
     border-radius: 6px;
 }
@@ -73,7 +71,6 @@ border-radius: 5px;
     font-size: 32px;
     margin:  auto auto;
 }
-
 
 input#number {
     text-align: right;
@@ -146,5 +143,15 @@ input#number:focus {
 .buttons:active {
     box-shadow: none;
 }
-
-
+.modal-header, .modal-header#menu_saisie{
+  background-color:#2E364A; 
+  color: white;
+}
+#ajouterClient, #ajouterSaisie{
+  background-color: #A90A35;
+  color: white;
+}
+#annulerClient, #annulerSaisie{
+  background-color: #808185;
+  color: white;
+}
