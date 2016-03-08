@@ -113,7 +113,6 @@ input#number:focus {
     font-size: 35px;
     color: #ECEEF3;
     font-weight: bold;
-    display: inline-block;
     /* border-top: 1px solid #1c0be0; */
     width: 75%;
     background: linear-gradient(#F78F0E 0%, #F78F0E 100%);
@@ -154,4 +153,7 @@ input#number:focus {
 #annulerClient, #annulerSaisie{
   background-color: #808185;
   color: white;
+}
+element.style {
+display: none;
 }
