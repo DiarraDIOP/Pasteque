@@ -2,9 +2,11 @@
 
 require '../config/config.php'; 
 
+$id = intval($_GET['id']);
+
  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  $sql="SELECT `ID`, `REFERENCE`, `CODE`, `CODETYPE`, `NAME`, `PRICEBUY`, `PRICESELL`, `CATEGORY`, `PROVIDER`, `TAXCAT`,
-  `ATTRIBUTSET_ID`, `STOCKCOST`, `STOCKVOLUME`, `ATTRIBUTES` FROM products";
+  `ATTRIBUTSET_ID`, `STOCKCOST`, `STOCKVOLUME`, `ATTRIBUTES` FROM products WHERE `CATEGORY`=".$id;
  $data = $pdo->query($sql);
  $data->setFetchMode(PDO::FETCH_ASSOC);
  $products= array();
