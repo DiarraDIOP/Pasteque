@@ -8,5 +8,4 @@ $(document).ready(function(){
   $.get("include/catalogue.html", function(data) {
     $("#catalogue").html(data);
   });
-}); 
-
+});
