@@ -95,27 +95,21 @@
                         <a href="index.html"><img  src="../img/drawable/logo.png" width="100" height="100" id="img"/></a>
                         </div>
                         </br>
-                        <form class="form-horizontal" action="index.html" method="POST">
+                        <form class="form-horizontal"  method="GET" action="connect.php">
                             <div class="form-group">
                             <div class="col-sm-12">
-                                <input class="user" type="text" class="form-control" id="inputEmail3" placeholder="User">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="User" name="login">
                             </div>
                             </div>
                             <div class="form-group">
                             <div class="col-sm-12">
-                                <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                <input type="password" name="motdepasse" class="form-control" id="inputPassword3" placeholder="Password">
 
                             </div>
                             </div>                             
                             <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                             <div class="checkbox">
-                            <label>
-                                <input id="showcharacters" name="showcharacters" type="checkbox">Afficher le mot de passe
-                            </label>
                             </div>
-                            </div>
-                            </br>
                             </div>
                             <div class="col-sm-12">
                             <button id="btn" type ="submit" class="btn btn-danger">Se connecter</button>
