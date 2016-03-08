@@ -5,7 +5,7 @@
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle" data-toggle="modal" href="#saisie" >
                         <img src="../img/drawable/ic_menu_manual_input.png"></img> Saisie libre
                     </a>
                 </li>
@@ -20,10 +20,9 @@
                 </li>
                 
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle" data-toggle="modal" href="#ajoutClient" >
                         <img src="../img/drawable/ic_menu_customer_add.png"></img> Ajouter un client
                     
-                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ></button>
                     </a>
                 </li>
 
@@ -42,21 +41,20 @@
                
             </ul>
 
-
-
-
             <!-- Formulaire d'ajout de client -->
-            <div id="myModal" class="modal fade" role="dialog">
+            <div id="ajoutClient" class="modal fade" role="dialog">
               <div class="modal-dialog">
 
                 <!-- Modal content-->
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">INFORMATION CLIENT</h4>
+                    <div>
+                      <h4 class="modal-title">INFORMATION CLIENT</h4>
+                    </div>
                   </div>
                   <div class="modal-body">
-                        <form role="form">
+                        <form role="form" name="form_ajout">
                           <div class="form-group">
                             <input type="text" class="form-control" placeholder="Nom">
                           </div>
@@ -66,19 +64,87 @@
                           </div>
                           <div class="form-group">
                             <label >Contact</label>
-                            <input type="tel" class="form-control" id="tel" placeholder="Téléphone">
-                            <input type="email" class="form-control" id="email" placeholder="Email">
+                            <div class="row">
+                              <div class="col-xs-6">
+                                <input type="tel" class="form-control" id="tel" placeholder="Téléphone">
+                              </div>
+                              <div class="col-xs-6">
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                              </div>
+                            </div>
                           </div>
                           <div class="form-group">
                             <label for="note">Note</label>
                             <textarea class="form-control" rows="3"></textarea>
                           </div>
-                          <button type="submit" class="btn btn-default">Ajouter</button>
+                          <button id="ajouterClient" type="submit" class="btn btn-default">AJOUTER</button>
                         </form>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button id="annulerClient" type="button" class="btn btn-default" data-dismiss="modal">ANNULER</button>
                   </div>
+                </div>
+
+              </div>
+            </div>
+
+           
+            <!--SAISIE LIBRE-->
+            <div id="saisie" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <form role="form" name="form_saisie">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <ul id="menu_saisie" class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#saisie">SAISIE LIBRE</a></li>
+                            <li><a data-toggle="tab" href="#codebarre">CODE BARRE</a></li>
+                          </ul>
+                      </div>
+                      <div class="modal-body">
+                            <div class="tab-content">
+                              <!--Saisie libre-->
+                              <div id="saisie" class="tab-pane fade in active">
+                                <h3>SAISIE LIBRE D'UN PRODUIT</h3>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Libellé"><br>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="row">
+                                      <div class="col-xs-3">
+                                        <input type="number" class="form-control" placeholder="Tarif" id="tarif"> 
+                                        <label for="tarif">&euro;</label>
+                                      </div>
+                                      <div class="col-xs-3">
+                                        <select class="form-control" id="tva">
+                                          <option>0.0</option>
+                                          <option>2.1</option>
+                                          <option>10.1</option>
+                                          <option>20.0</option>
+                                          <option>5.5</option>
+                                        </select> 
+                                        <label for="tva">%</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <!--Code barre-->
+                              <div id="codebarre" class="tab-pane fade">
+                                <input type="number" class="form-control" placeholder="codebarre">
+                                <h6> Résultats:</h6>
+                                <div id="pdts_codebarre">
+                                </div>
+                              </div>
+                            </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button id="ajouterSaisie" type="submit" class="btn btn-default">AJOUTER</button>
+                        <button id="annulerSaisie" type="button" class="btn btn-default" data-dismiss="modal">ANNULER</button>
+                      </div>
+
+                  </form>
                 </div>
 
               </div>
@@ -86,4 +152,9 @@
 
 
 
+
+
+
+
+          
 
