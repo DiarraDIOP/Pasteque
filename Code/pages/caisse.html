@@ -13,7 +13,7 @@
         <!-- Bootstrap Core CSS -->
         <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
+<script type="text/javascript" src="../js/database_script.js"></script>
         <!-- MetisMenu CSS -->
         <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
@@ -51,14 +51,33 @@
         <!-- Navigation -->
        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0"> 
          <div id="header">
+
          </div>
+
          
        </nav>
     </div>
 
        <div>
                 <div class="row">
-                    <div class="col-lg-12">                       
+                    <div class="col-lg-12">    
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">                        
+                        <li>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" onclick="showCategories()">
+                                Categories
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts" id="categories">
+                        <!--LISTE DES CLIENTS-->
+                    </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>                   
                     </div>
                 </div>                
                 <div class="row">
