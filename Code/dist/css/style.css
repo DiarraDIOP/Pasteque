@@ -1,4 +1,3 @@
-
 .slideshow {
    width: 350px;
    height: 122px;
@@ -154,6 +153,6 @@ input#number:focus {
   background-color: #808185;
   color: white;
 }
-element.style {
-display: none;
+.btn-danger:hover, .btn-danger{
+  background-color: #A90A35;
 }
