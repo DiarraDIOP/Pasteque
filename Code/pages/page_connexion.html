@@ -98,7 +98,7 @@
                         </div>
                         </br>
 
-                        <form class="form-horizontal"  method="POST" action="connect.php" >
+                        <form class="form-horizontal"  method="POST" action="connect.php" onsubmit="return verifFormLog(this)">
                         
                         <!--<form class="form-horizontal"  method="POST" action="index.html">-->
                             <div class="form-group">
@@ -108,7 +108,7 @@
                             </div>
                             <div class="form-group">
                             <div class="col-sm-12">
-                                <input type="password" name="motdepasse" class="form-control" id="inputPassword3" placeholder="Password">
+                                <input type="password" name="motdepasse" class="form-control" id="inputPassword3" placeholder="Password" onblur="verifSaisie(this)">
 
                             </div>
                             </div>                             
@@ -117,7 +117,7 @@
                             </div>
                             </div>
                             <div class="col-sm-12">
-                            <button id="btn" type ="submit" class="btn btn-danger" onsubmit="return verifFormLog(this)">Se connecter</button>
+                            <button id="btn" type ="submit" class="btn btn-danger">Se connecter</button>
                             </div>
                             </div>
                             <div class="form-group">
