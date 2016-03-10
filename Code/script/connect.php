@@ -20,7 +20,8 @@ else
     }
     else
     {
-        require('config.php'); // On réclame le fichier
+        require('config.php'); 
+		// On réclame le fichier
         $login = $_GET['login'];
         $motdepasse = $_GET['motdepasse'];
     }
