@@ -53,30 +53,30 @@
                     </div>
                   </div>
                   <div class="modal-body">
-                        <form role="form" name="form_ajout" action="ajoutClient.php">
+                        <form role="form" name="form_ajout" action="ajoutClient.php" onsubmit="return verifFormAjC(this)">
                           <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nom" onblur="verifNom(this)">
+                            <input type="text" class="form-control" placeholder="Nom" name="nom" onblur="verifNom(this)">
                           </div>
                           <div class="form-group">
                             <label for="cp">Code postal</label>
-                            <input type="number" class="form-control" id="cp" onblur="verifCP(this)">
+                            <input type="number" class="form-control" id="cp" name="cp" onblur="verifCP(this)">
                           </div>
                           <div class="form-group">
                             <label >Contact</label>
                             <div class="row">
                               <div class="col-xs-6">
-                                <input type="tel" class="form-control" id="tel" placeholder="Téléphone" onblur="verifTel(this)">
+                                <input type="tel" class="form-control" id="tel" name="tel" placeholder="Téléphone" onblur="verifTel(this)">
                               </div>
                               <div class="col-xs-6">
-                                <input type="email" class="form-control" id="email" placeholder="Email" onblur="verifEmail(this)">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" onblur="verifEmail(this)">
                               </div>
                             </div>
                           </div>
                           <div class="form-group">
                             <label for="note">Note</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" rows="3" name="note"></textarea>
                           </div>
-                          <button id="ajouterClient" type="submit" class="btn btn-default" onsubmit="return verifFormAdd(this)">AJOUTER</button>
+                          <button id="ajouterClient" type="submit" class="btn btn-default">AJOUTER</button>
                         </form>
                   </div>
                   <div class="modal-footer">
@@ -94,7 +94,7 @@
 
                 <!-- Modal content-->
                 <div class="modal-content">
-                  <form role="form" name="form_saisie" action="saisie.php">
+                  <form role="form" name="form_saisie" action="saisie.php" onsubmit="return verifFormSaisie(this)">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                           <ul id="menu_saisie" class="nav nav-tabs">
@@ -108,16 +108,16 @@
                               <div id="saisielibre" class="tab-pane fade in active">
                                 <h3>SAISIE LIBRE D'UN PRODUIT</h3>
                                   <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Libellé" onblur="verifLib(this)"><br>
+                                    <input type="text" class="form-control" placeholder="Libellé" name="libsaisie" onblur="verifSaisie(this)"><br>
                                   </div>
                                   <div class="form-group">
                                     <div class="row">
                                       <div class="col-xs-3">
-                                        <input type="number" class="form-control" step="0.01" placeholder="Tarif" id="tarif" onblur="verifTarif(this)"> 
+                                        <input type="number" class="form-control" min="0" step="0.01" placeholder="Tarif" name="tarif" id="tarif" onblur="verifSaisie(this)"> 
                                         <label for="tarif">&euro;</label>
                                       </div>
                                       <div class="col-xs-3">
-                                        <select class="form-control" id="tva" onblur="verifTVA(this)">
+                                        <select class="form-control" id="tva" name="tva" onblur="verifSaisie(this)">
                                           <option>0.0</option>
                                           <option>2.1</option>
                                           <option>10.1</option>
@@ -131,14 +131,14 @@
                               </div>
                               <!--Code barre-->
                               <div id="codebarre" class="tab-pane fade">
-                                <input type="number" class="form-control" placeholder="codebarre" onblur="verifCB(this)">
+                                <input type="number" class="form-control" min="0" placeholder="codebarre" name="codebarre" onblur="verifCodeBarre(this)">
                                 <h6> Résultats:</h6>
                                 <div id="pdts_codebarre"></div>
                               </div>
                             </div>
                       </div>
                       <div class="modal-footer">
-                        <button id="ajouterSaisie" type="submit" class="btn btn-default" onsubmit="return verifFormSaisie(this)">AJOUTER</button>
+                        <button id="ajouterSaisie" type="submit" class="btn btn-default">AJOUTER</button>
                         <button id="annulerSaisie" type="button" class="btn btn-default" data-dismiss="modal">ANNULER</button>
                       </div>
 
