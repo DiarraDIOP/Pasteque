@@ -33,18 +33,18 @@
 			function affiche() {
 				if (xmlHttp.readyState == 1){
 	        		//chargement de la page
-	               	document.getElementById('req').innerHTML = "<p id='load'> <img src='../img/loading.gif'> </p>";
+	               	document.getElementById('pdts_codebarre').innerHTML = "<p id='load'> <img src='../img/loading.gif'> </p>";
 	          	}
 	          	if (xmlHttp.readyState == 4){	
 	            	//affichage sous forme brut
-	                document.getElementById('req').innerHTML = xmlHttp.responseText;
+	                document.getElementById('pdts_codebarre').innerHTML = xmlHttp.responseText;
 	            } 
 			}
 			
-			function liste_rapports(sstheme){	
+			function showProductsCodeBarre(idCodeBarre){	
 				xmlHttp = GetXmlHttpObject();
 				xmlHttp.onreadystatechange = affiche;
-				xmlHttp.open("GET",'liste_rapports.jsp?q='+sstheme,true);
+				xmlHttp.open("GET","../script/product.php?idCodeBarre="+idCodeBarre,true);
 				xmlHttp.send(null);	
 			}	
 			
