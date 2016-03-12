@@ -23,7 +23,7 @@ if($idCodeBarre == null){
 if($id == is_null){
 	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	 $sql="SELECT `ID`, `REFERENCE`, `CODE`, `CODETYPE`, `NAME`, `PRICEBUY`, `PRICESELL`, `CATEGORY`, `PROVIDER`, `TAXCAT`,
-	  `ATTRIBUTSET_ID`, `STOCKCOST`, `STOCKVOLUME`, `ATTRIBUTES` FROM products WHERE `CODE`=".$idCodeBarre;
+	  `ATTRIBUTSET_ID`, `STOCKCOST`, `STOCKVOLUME`, `ATTRIBUTES` FROM products WHERE `CODE` LIKE '%".$idCodeBarre."%'";
 	 $data = $pdo->query($sql);
 	 $data->setFetchMode(PDO::FETCH_ASSOC);
 	 $products= array();
