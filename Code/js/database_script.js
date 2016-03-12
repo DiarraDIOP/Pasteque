@@ -28,10 +28,10 @@ function showProducts(id) {
     }
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            document.getElementById("product").innerHTML = xmlhttp.responseText;
+            document.getElementById("product_"+id).innerHTML = xmlhttp.responseText;
         }
     };
-    xmlhttp.open("GET","../script/product.php?id="+id,true);
+    xmlhttp.open("GET","../script/products.php?id="+id,true);
     xmlhttp.send();
 }
 
