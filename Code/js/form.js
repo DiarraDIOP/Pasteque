@@ -75,7 +75,7 @@ function verifFormSaisie(f)
 
 function verifNom(champ)
 {
-   if (verifSaisie(champ) && (/^[a-zA-Z]*$/).test(champ.value))
+   if (verifSaisie(champ) && (/^[a-zA-Z-\\t]*$/).test(champ.value))
    {  
       surligne(champ, false);
       return true;

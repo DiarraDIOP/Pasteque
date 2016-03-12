@@ -70,6 +70,3 @@ function showProductsCodeBarre(idCodeBarre) {
     xmlhttp.open("GET","../script/product.php?idCodeBarre="+idCodeBarre,true);
     xmlhttp.send();
 }
-
-
-
