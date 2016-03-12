@@ -31,7 +31,7 @@ function showProducts(id) {
             document.getElementById("product_"+id).innerHTML = xmlhttp.responseText;
         }
     };
-    xmlhttp.open("GET","../script/products.php?id="+id,true);
+    xmlhttp.open("GET","../script/products.php?idCodeBarre=null&id="+id, true);
     xmlhttp.send();
 }
 
