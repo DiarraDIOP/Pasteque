@@ -9,3 +9,9 @@ $(document).ready(function(){
     $("#catalogue").html(data);
   });
 });
+
+$(document).ready(function(){ 
+  $.get("ticket.html", function(data) {
+    $("#ticket").html(data);
+  });
+});
