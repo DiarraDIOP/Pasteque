@@ -44,7 +44,7 @@
 			function showProductsCodeBarre(idCodeBarre){	
 				xmlHttp = GetXmlHttpObject();
 				xmlHttp.onreadystatechange = affiche;
-				xmlHttp.open("GET","../script/products.php?idCodeBarre="+idCodeBarre+"&id=null");
+				xmlHttp.open("GET","../script/productswithCBarre.php?idCodeBarre="+idCodeBarre);
 				xmlHttp.send(null);	
 			}	
 			
