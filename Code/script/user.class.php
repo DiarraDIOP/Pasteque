@@ -1,18 +1,12 @@
-<?php
-
-require '../config/config.php'; 
+<?php 
 
 class Utilisateur {
 	private   $_name;
-	private   $_password;	
-	
-	public function prenom() {
-		return $this->_prenom;
-	}
+	private   $_password;		
 	
 	public function affichage() {
 		return "<div>
-		name : ".{$this->_name}." <br>
+		name : ".$this->_name." <br>
 		</div> ";
 	}
 	
@@ -52,28 +46,22 @@ HTML;
 	}
 	
 	
-	public function connexion($_name, $_pass){
+	public function connexion($_name, $_pass, $pdo){
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  
-	$data = $pdo->query("SELECT * FROM people where NAME = ".$_login." AND APPPASSWORD = ".$_pass);
+	$data = $pdo->query("SELECT * FROM people where NAME = '".$_name."' AND APPPASSWORD = '".$_pass."'");
  	$data->setFetchMode(PDO::FETCH_ASSOC);
 
 		if($row = $data->fetch()){
-			$this->_name=$ligne['NAME'];
-		 	$this->_password=$ligne['APPPASSWORD'];
+			$this->_name = $row['NAME'];
+		 	$this->_password = $row['APPPASSWORD'];
 		 	return true;
 		}
 		else{
-			throw new ConnexionException(" Echec de connexion ") ;
+			echo " Echec de connexion " ;
 		}        
 	}
 }
 
-
-/**********exception************/
-
-class ConnexionException extends Exception { 
-	//parent:: __construct()
-}
 
 ?>
