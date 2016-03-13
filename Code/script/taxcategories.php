@@ -1,0 +1,17 @@
+<?php
+
+require '../config/config.php'; 
+
+ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+ $data = $pdo->query("SELECT * FROM `taxes`");
+ $data->setFetchMode(PDO::FETCH_ASSOC);
+
+
+   foreach($data as $row)
+{
+    print "<option>".$row[NAME]."</option>";
+}
+
+?>
