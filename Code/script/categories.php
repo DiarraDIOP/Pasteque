@@ -14,8 +14,7 @@ require '../config/config.php';
 {
 	$id= addslashes($row['ID']);
 	$name= addslashes($row['NAME']);
-	echo "id des categories: ".$id;
-    print "<li><a onclick='showProducts(".$id.")'>". $name ."</a></li><ul id='product_".$id."'></ul>";
+    print "<form><li><a onclick='showProducts(\"".htmlspecialchars($id,ENT_QUOTES)."\")'>". $name ."</a></li><ul id='product_".$id."'></ul></form>";
 
 
 }

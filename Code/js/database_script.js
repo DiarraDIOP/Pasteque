@@ -18,7 +18,6 @@ function showClients() {
 }
 
 function showProducts(id) {
-    
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -31,7 +30,7 @@ function showProducts(id) {
             document.getElementById("product_"+id).innerHTML = xmlhttp.responseText;
         }
     };
-    xmlhttp.open("GET","../script/products.php?idCodeBarre=null&id="+id, true);
+    xmlhttp.open("GET","../script/products.php?id="+id, true);
     xmlhttp.send();
 }
 
