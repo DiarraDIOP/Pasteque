@@ -28,11 +28,13 @@ function showProducts(id) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             document.getElementById("product_"+id).innerHTML = xmlhttp.responseText;
+            console.log("id categorie (products): "+id);
         }
     };
     xmlhttp.open("GET","../script/products.php?id="+id, true);
     xmlhttp.send();
 }
+
 
 function showCategories() {
     
