@@ -13,8 +13,8 @@ require '../config/config.php';
    foreach($data as $row)
 {
 	$id= addslashes($row['ID']);
+	print "id dans categories.php : ".$id;
 	$name= addslashes($row['NAME']);
-	echo "id des categories: ".$id;
     print "<li><a onclick='showProducts(".$id.")'>". $name ."</a></li><ul id='product_".$id."'></ul>";
 
 
