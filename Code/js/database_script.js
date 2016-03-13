@@ -31,7 +31,25 @@ function showProducts(id) {
             console.log("id categorie (products): "+id);
         }
     };
-    xmlhttp.open("GET","../script/products.php?id="+id, true);
+    xmlhttp.open("GET","../script/products.php?idCodeBarre=null&id="+id, true);
+    xmlhttp.send();
+}
+
+
+function showProductsCodeBarre(code) {
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("pdts_codebarre").innerHTML = xmlhttp.responseText;
+        }
+    };
+    xmlhttp.open("GET","../script/products.php?id=null&idCodeBarre="+code, true);
     xmlhttp.send();
 }
 
