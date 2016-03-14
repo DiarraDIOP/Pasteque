@@ -49,15 +49,15 @@ input#number:focus {
 .buttons {
     cursor: default;
     text-align: center;
-    padding: 10px 22px;
+    padding: 1% 2%;
     font-size: 40px;
     color: #ECEEF3;
     font-weight: bold;
     display: inline-block;
     /* border-top: 1px solid #1c0be0; */
-    width: 60px;
+    width: 26%;
     background: linear-gradient(#83B8EF 0%, #2A63E4 100%);
-    margin-bottom: 10px;
+    margin-bottom: 1%;
 }
 
 #buttons-Encaisser {
@@ -69,7 +69,7 @@ input#number:focus {
     font-weight: bold;
     display: inline-block;
     /* border-top: 1px solid #1c0be0; */
-    width: 170px;
+    width: 65%;
     background: linear-gradient(#F78F0E 0%, #F78F0E 100%);
     margin-bottom: 10px;
 }
@@ -83,7 +83,7 @@ input#number:focus {
     font-weight: bold;
     display: inline-block;
     /* border-top: 1px solid #1c0be0; */
-    width: 60px;
+    width: 16%;
     background: linear-gradient(#777 0%, #777 100%);
     margin-bottom: 10px;
 }

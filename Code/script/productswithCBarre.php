@@ -6,7 +6,7 @@
  $idCodeBarre = intval($_GET['idCodeBarre']);
 
  	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
- 	 $sql="SELECT * FROM products WHERE `CODE` LIKE '%".$idCodeBarre."%'";
+ 	 $sql="SELECT * FROM product WHERE `CODE` LIKE '%".$idCodeBarre."%'";
  	 $data = $pdo->query($sql);
  	 $data->setFetchMode(PDO::FETCH_ASSOC);
  

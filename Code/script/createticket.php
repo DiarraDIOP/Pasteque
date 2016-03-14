@@ -54,4 +54,3 @@ function randomID($int){
 	 //header('Location: ../pages/caisse.html' );
 	}*/
 ?>
-

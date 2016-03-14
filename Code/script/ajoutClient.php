@@ -16,7 +16,8 @@ $string = "";
 
  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
- $data = $pdo->query("INSERT INTO ".$dernierebase.".customers (`ID`, `SEARCHKEY`, `TAXID`, `NAME`, `TAXCATEGORY`, `DISCOUNTPROFILE_ID`, `CARD`, `MAXDEBT`, `ADDRESS`, `ADDRESS2`, `POSTAL`, `CITY`, `REGION`, `COUNTRY`, `FIRSTNAME`, `LASTNAME`, `EMAIL`, `PHONE`, `PHONE2`, `FAX`, `NOTES`, `VISIBLE`, `CURDATE`, `CURDEBT`, `PREPAID`, `TARIFFAREA_ID`, `EXPIREDATE`) VALUES ('".$id."', NULL, NULL, '".$nom. "', NULL, NULL, NULL, '0', NULL, NULL, '".$cp."', NULL, NULL, NULL, NULL, NULL, '".$email."', '".$tel."', NULL, NULL, NULL, b'1', NULL, NULL, '0', NULL, NULL)");
+ $data = $pdo->query("INSERT INTO ".$dernierebase.".customer (`ID`, `SEARCH_KEY`, `NUMBER`, `DISPLAY_NAME`, `TAXCUSTOMERCATEGORY_ID`, `DISCOUNTPROFILE_ID`, `CARD`, `MAX_DEBT`, `ADDRESS`, `ADDRESS2`, `POSTAL`, `DISPLAY_ID`, `REGION`, `COUNTRY`, `FIRSTNAME`, `LASTNAME`, `EMAIL`, `PHONE`, `PHONE2`, `FAX`, `NOTE`, `VISIBLE`, `DEBT_DATE`, `CURRENT_DEBT`, `PREPAID`, `TARIFFAREA_ID`, `EXPIRE_DATE`) VALUES ('".$id."', NULL, NULL, '".$nom. "', NULL, NULL, NULL, '0', NULL, NULL, '".$cp."', NULL, NULL, NULL, NULL, NULL, '".$email."', '".$tel."', NULL, NULL, NULL, b'1', NULL, NULL, '0', NULL, NULL)");
 
 header('Location: ' . $_SERVER['HTTP_REFERER'] );
 ?>
+
