@@ -1,7 +1,8 @@
 .slideshow {
-   width: 350px;
+   width: 50%;
    overflow:auto;
    border: 3px solid #F2F2F2;
+   margin: auto;
 }
 
 .slideshow ul {
@@ -29,6 +30,12 @@
    left: 150px;
 }
 
+#div{
+  display: table-cell;
+  position: relative;
+text-align: center;
+
+}
 #p1{
 	margin:0 auto;
 	float : none;
@@ -60,86 +67,6 @@ border-radius: 5px;
 
 }
 
-#calculator, #number, .buttons {
-    border-radius: 6px;
-}
-
-#calculator {
-    width: 45%;
-    font-size: 32px;
-    margin:  auto auto;
-}
-
-input#number {
-    text-align: right;
-    background-color: white;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    color: black;
-    font-size: 40px;
-    padding: 16px;
-    width: 280px;
-}
-
-input#number:focus {
-    outline: none;
-}
-
-#body {
-    padding: 0 10px;
-}
-
-.buttons {
-    cursor: default;
-    text-align: center;
-    padding: 10px 22px;
-    font-size: 40px;
-    color: #ECEEF3;
-    font-weight: bold;
-    display: inline-block;
-    /* border-top: 1px solid #1c0be0; */
-    width: 30%;
-    background: linear-gradient(#83B8EF 0%, #2A63E4 100%);
-    margin-bottom: 10px;
-}
-
-#buttons-Encaisser {
-    cursor: default;
-    padding: 10px 22px;
-    font-size: 35px;
-    color: #ECEEF3;
-    font-weight: bold;
-    /* border-top: 1px solid #1c0be0; */
-    width: 75%;
-    background: linear-gradient(#F78F0E 0%, #F78F0E 100%);
-    margin-bottom: 10px;
-}
-
-#buttonsX {
-    cursor: default;
-    text-align: center;
-    padding: 10px 22px;
-    font-size: 35px;
-    color: #ECEEF3;
-    font-weight: bold;
-    display: inline-block;
-    /* border-top: 1px solid #1c0be0; */
-    width: 60px;
-    background: linear-gradient(#777 0%, #777 100%);
-    margin-bottom: 10px;
-}
-
-.buttons:hover {
-    background: linear-gradient(#777 0%, #777 100%);
-    border-top: 1px solid #777;
-    text-shadow: 0 -1px 1px #777;
-}
-
-.buttons:active {
-    box-shadow: none;
-}
 .modal-header, .modal-header#menu_saisie{
   background-color:#2E364A; 
   color: white;
@@ -215,3 +142,11 @@ input#number:focus {
       position: fixed; 
       top: 55px; left: 0;
     }
+h1 {
+    margin:40px 0px 20px 0px;
+  color:#95c500;
+    font-size:28px;
+    line-height:34px;
+    text-align:center;
+}
+
