@@ -6,8 +6,8 @@ require '../config/config.php';
 
 	$id = $_GET['id'];
 	
-	 $sql="SELECT `ID`, `REFERENCE`, `CODE`, `CODETYPE`, `NAME`, `PRICEBUY`, `PRICESELL`, `CATEGORY`, `PROVIDER`, `TAXCAT`,
-	  `ATTRIBUTESET_ID`, `STOCKCOST`, `STOCKVOLUME`, `ATTRIBUTES` FROM products WHERE `CATEGORY`='".$id."';";
+	 $sql="SELECT `ID`, `REFERENCE`, `BARCODE`, `BARCODE_TYPE`, `NAME`, `PRICE_BUY`, `PRICE_SELL`, `CATEGORY_ID`, `PROVIDER_ID`, `TAXCATEGORY_ID`,
+	  `ATTRIBUTESET_ID`, `STOCK_COST`, `STOCK_VOLUME`, `ATTRIBUTES` FROM product WHERE `CATEGORY_ID`='".$id."';";
 	 $data = $pdo->query($sql);
 	 $data->setFetchMode(PDO::FETCH_ASSOC);
 	 $products= array();

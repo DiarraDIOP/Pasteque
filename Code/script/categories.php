@@ -5,7 +5,7 @@ require '../config/config.php';
  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
- $data = $pdo->query('SELECT `ID`, `REFERENCE`, `NAME`, `PARENTID`, `IMAGE`, `DISPORDER` FROM categories');
+ $data = $pdo->query('SELECT `ID`, `REFERENCE`, `NAME`, `PARENT_ID`, `IMAGE`, `DISPLAY_ORDER` FROM category');
  $data->setFetchMode(PDO::FETCH_ASSOC);
 
 

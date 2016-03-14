@@ -10,14 +10,14 @@ $string = "";
  }
 
  $id = $string;
-	 $sql="SELECT MAX(`TICKETID`) FROM tickets ;";
+	 $sql="SELECT MAX(`RECEIPT_ID`) FROM ticket ;";
 	 $ticket = $pdo->query($sql);
 	 $ticket->setFetchMode(PDO::FETCH_ASSOC);
 	
 	  foreach($ticket as $row)
 	{
-		$i=intval($row['TICKETID'])+1;
-	 $insert= $pdo->query("INSERT INTO ".$dernierebase.".tickets (`ID`, `TICKETTYPE`, `TICKETID`, `PERSON`, `CUSTOMER`, `STATUS`, `CUSTCOUNT`, `TARIFFAREA`, `DISCOUNTRATE`, `DISCOUNTPROFILE_ID`) VALUES ('".$id."', '0', '".$i."', '', NULL, '0', NULL, NULL, '0', NULL);");
+		$i=intval($row['RECEIPT_ID'])+1;
+	 $insert= $pdo->query("INSERT INTO ".$dernierebase.".ticket (`ID`, `TYPE`, `RECEIPT_ID`, `USER_ID`, `CUSTOMER_ID`, `STATUS`, `CUSTOMER_COUNT`, `TARIFFAREA_ID`, `DISCOUNT_RATE`, `DISCOUNTPROFILE_ID`) VALUES ('".$id."', '0', '".$i."', '', NULL, '0', NULL, NULL, '0', NULL);");
 
 	 header('Location: ../pages/caisse.html' );
 	}

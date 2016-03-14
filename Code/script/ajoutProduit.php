@@ -21,7 +21,7 @@ $exist=$pdo->query($sql);
 		
 	}*/
 
-	$sql="INSERT INTO ".$dernierebase.".ticketlines (`TICKET`, `LINE`, `PRODUCT`, `UNITS`, `PRICE`, `TAXID`, `DISCOUNTRATE`, `ATTRIBUTES`) 
+	$sql="INSERT INTO ".$dernierebase.".ticket_line (`TICKET_ID`, `LINE`, `PRODUCT_ID`, `QUANTITY`, `PRICE`, `TAX_ID`, `DISCOUNT_RATE`, `ATTRIBUTES`) 
 	VALUES ('".$ticket."', NULL, '".$idProduct."', '1', '0', '000', '0', '0')";
 $data = $pdo->query($sql);
 

@@ -5,16 +5,16 @@ require '../config/config.php';
 	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	$id = $_GET['idticket'];
-	$sql="SELECT `TICKET`, `LINE`, `PRODUCT`, `UNITS`, `PRICE`, `TAXID`, `DISCOUNTRATE`, `ATTRIBUTES` 
-	FROM ticketlines WHERE `TICKET`='".$id."';";
+	$sql="SELECT `TICKET_ID`, `LINE`, `PRODUCT_ID`, `QUANTITY`, `PRICE`, `TAX_ID`, `DISCOUNT_RATE`, `ATTRIBUTES` 
+	FROM ticket_line WHERE `TICKET_ID`='".$id."';";
 
 	$data = $pdo->query($sql);
 	$data->setFetchMode(PDO::FETCH_ASSOC);
 
 	foreach($data as $row)
 	{
-		$sql1="SELECT `ID`, `REFERENCE`, `CODE`, `CODETYPE`, `NAME`, `PRICEBUY`, `PRICESELL`, `CATEGORY`, `PROVIDER`, `TAXCAT`,
-	  `ATTRIBUTESET_ID`, `STOCKCOST`, `STOCKVOLUME`, `ATTRIBUTES` FROM products WHERE `ID`='".$row['PRODUCT']."';";;
+		$sql1="SELECT `ID`, `REFERENCE`, `BARCODE`, `BARCODE_TYPE`, `NAME`, `PRICE_BUY`, `PRICE_SELL`, `CATEGORY_ID`, `PROVIDER_ID`, `TAXCATEGORY_ID`,
+	  `ATTRIBUTESET_ID`, `STOCK_COST`, `STOCK_VOLUME`, `ATTRIBUTES` FROM product WHERE `ID`='".$row['PRODUCT']."';";;
 
 			$data1 = $pdo->query($sql1);
 			$data1->setFetchMode(PDO::FETCH_ASSOC);
