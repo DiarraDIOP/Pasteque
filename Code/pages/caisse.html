@@ -78,9 +78,9 @@
                     <div class="col-lg-4">
                         <div id="calculator">
                         <div class="slideshow">
-                            <ul>
-                                <li>
-                                    <figure>
+                            <ul id="payement">
+                                <!--<li id="payement">
+                                     <figure>
                                         <img src="../img/drawable/coins.png"  alt="" width="50" height="50" style="margin-right:10px;"/>
                                         <figcaption style="font-size:14px">espèces</figcaption>
                                     </figure>
@@ -131,7 +131,7 @@
                                     <figure>
                                         <figcaption style="font-size:14px">Pré payé</figcaption>
                                     </figure>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
             
@@ -152,35 +152,16 @@
                     <div class="buttons">.</div>
                     <div class="buttons">.00</div>
                     <div id="buttonsX" class="buttons">X</div>
-                    <div id="buttons-Encaisser"class="buttons">Encaisser</div>
+                    <div id="buttons-Encaisser"class="buttons" onClick="paymentMode()">Encaisser</div>
                 </div>
                 
             </div>  
-                <p>
-                   
-                   <!-- <input list="Client" />
-                    <datalist id="Client" value="javascript:showClients()">
-                    </datalist> -->
+            
+                <div id="backname">
+                </div>    
+                    
 
-                    <input list="browsers">
-
-<datalist id="browsers">
-  javascript:showClients();
-</datalist>
-                </p>
-                <p>
-                    <label for="prepaid" style="font-size:14px">Pre-paid account :</label>
-                    <output type="text" name="prepaid" id="prepaid" placeholder="00" height="10px" width="20px"/>
-                </p> 
-                <p>
-                    <label for="debit" style="font-size:14px">Current debit :</label>
-                    <output type="text" name="debit" id="debit" placeholder="00" height="10px" width="20px"/>
-                </p>
-                <p>
-                    <label for="max" style="font-size:14px">Maximum debit :</label>
-                    <output type="text" name="max" id="max" placeholder="00" height="10px" width="20px"/>
-                </p>       
-                    </div>
+        </div>
         </div>
 
     <!-- jQuery -->
