@@ -1,29 +1,21 @@
-
 <?php
+require_once "user.class.php";
+require_once '../config/config.php';
 
-if(!isset($_GET['login']) && !isset($_GET['motdepasse']))
-{
-    header('Location: index.html');
-    session_start();
-    echo '<SCRIPT LANGUAGE="JavaScript">document.location.href="index.html"
-</SCRIPT>';
-}
-else
-{
-    // On va vérifier les variables
-    if(!preg_match('/^[[:alnum:]]+$/', $_GET['login']) or
-!preg_match('/^[[:alnum:]]+$/', $_GET['motdepasse']))
-    {
-        echo 'Vous devez entrer uniquement des lettres ou des chiffres <br/>';
-        echo '<a href="page_connexion" temp_href="page_connexion.html">Réessayer</a>';
-        exit();
+
+    if(isset ($_POST['login']) && isset ($_POST['motdepasse'])){
+
+        $login = $_POST['login'];
+        $pass = $_POST['motdepasse'];
+        $user = new Utilisateur();
+
+        if($user->connexion($login, sha1($pass), $pdo)){
+            session_start();
+            $_SESSION['name'] = '$login';
+            header('Location: ../pages/index.html');
+        }
+        else{
+            header('Location: ../pages/page_connexion.html');
+        }
     }
-    else
-    {
-        require('config.php'); 
-		// On réclame le fichier
-        $login = $_GET['login'];
-        $motdepasse = $_GET['motdepasse'];
-    }
-}
-?>
+    

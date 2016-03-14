@@ -10,7 +10,7 @@ function surligne(champ, erreur)
 
 function verifLogin(champ)
 {
-   if((/^[a-zA-Z0-9]{5,8}$/).test(champ.value))
+   if((/^[a-zA-Z0-9]*$/).test(champ.value))
    {
       surligne(champ, false);
       return true;

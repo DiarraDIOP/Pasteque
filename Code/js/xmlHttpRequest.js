@@ -33,18 +33,18 @@
 			function affiche() {
 				if (xmlHttp.readyState == 1){
 	        		//chargement de la page
-	               	document.getElementById('pdts_codebarre').innerHTML = "<p id='load'> <img src='../img/loading.gif'> </p>";
+	               	pdts_codebarre.innerHTML = "<p id='load'> <img src='../img/loading.gif'> </p>";
 	          	}
 	          	if (xmlHttp.readyState == 4){	
 	            	//affichage sous forme brut
-	                document.getElementById('pdts_codebarre').innerHTML = xmlHttp.responseText;
+	                pdts_codebarre.innerHTML = xmlHttp.responseText;
 	            } 
 			}
 			
 			function showProductsCodeBarre(idCodeBarre){	
 				xmlHttp = GetXmlHttpObject();
 				xmlHttp.onreadystatechange = affiche;
-				xmlHttp.open("GET","../script/products.php?idCodeBarre="+idCodeBarre+"&id=null");
+				xmlHttp.open("GET","../script/productswithCBarre.php?idCodeBarre="+idCodeBarre);
 				xmlHttp.send(null);	
 			}	
 			
