@@ -15,3 +15,9 @@ $(document).ready(function(){
     $("#ticket").html(data);
   });
 });
+
+$(document).ready(function(){ 
+  $.get("include/calculatrice.html", function(data) {
+    $("#calculatrice").html(data);
+  });
+});
