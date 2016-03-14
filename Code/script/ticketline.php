@@ -14,7 +14,7 @@ require '../config/config.php';
 	foreach($data as $row)
 	{
 		$sql1="SELECT `ID`, `REFERENCE`, `BARCODE`, `BARCODE_TYPE`, `NAME`, `PRICE_BUY`, `PRICE_SELL`, `CATEGORY_ID`, `PROVIDER_ID`, `TAXCATEGORY_ID`,
-	  `ATTRIBUTESET_ID`, `STOCK_COST`, `STOCK_VOLUME`, `ATTRIBUTES` FROM product WHERE `ID`='".$row['PRODUCT']."';";;
+	  `ATTRIBUTESET_ID`, `STOCK_COST`, `STOCK_VOLUME`, `ATTRIBUTES` FROM product WHERE `ID`='".$row['PRODUCT_ID']."';";;
 
 			$data1 = $pdo->query($sql1);
 			$data1->setFetchMode(PDO::FETCH_ASSOC);
@@ -25,3 +25,6 @@ require '../config/config.php';
 	}
 
 ?>
+<script>
+totalTicket('".$id."');
+</script>

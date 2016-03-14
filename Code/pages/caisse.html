@@ -78,9 +78,9 @@
                 
                     <ul id="ticketProduits"></ul>
                     
-                    <output type="text" id="total"/>
-                    
-                     <button id="fermeture_caisse" onClick="totalTicket('03498afd5fa28959f5975453ec8e3510')" class="btn btn-danger btn-lg btn-block"> Fermer la caisse </button>     
+                    <output type="text" id="total">
+                    </output>
+                     <button id="fermeture_caisse" onClick="" class="btn btn-danger btn-lg btn-block"> Fermer la caisse </button>     
     </div>
     <div class="col-sm-4">
       
@@ -154,8 +154,7 @@
             </tr>
             <tr>
                 <td class="calc_td_btn" colspan="3">
-                    <!-- javascript:f_calc('calc','='); -->
-                        <input type="button" class="calc_btn" value="Encaisser" onclick="paymentMode()" />
+                        <input type="button" class="calc_btn" value="Encaisser" onclick="javascript:f_calc('calc','=');" />
                 </td>
             </tr>
         </table>
@@ -204,7 +203,11 @@
       }, 3500);
    });*/
                 document.getElementById('calc').onload=initialiser_calc('calc');
-        
+            window.onload=function(){
+  
+                showTicket('1');
+                /*paymentMode();*/
+};
             </script>
 
 </body>
