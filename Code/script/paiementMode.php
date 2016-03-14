@@ -5,7 +5,7 @@ require '../config/config.php';
  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
- $data = $pdo->query('SELECT `ID`, `CODE`, `NAME`, `BACK_NAME`, `FLAGS`,`ACTIVE`, `SYSTEM`, `DISPLAY_ORDER` FROM payment_modes');
+ $data = $pdo->query('SELECT `ID`, `CODE`, `NAME`, `BACK_NAME`, `FLAGS`,`ACTIVE`, `SYSTEM`, `DISPLAY_ORDER` FROM payment_mode');
  $data->setFetchMode(PDO::FETCH_ASSOC);
 
 /* $categories= array();*/

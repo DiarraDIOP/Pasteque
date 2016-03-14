@@ -4,7 +4,7 @@ require '../config/config.php';
 
  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$id = $_GET['id'];
-	$sql='SELECT `ID`, `CODE`, `NAME`, `BACK_NAME`, `FLAGS`,`ACTIVE`, `SYSTEM`, `DISPLAY_ORDER` FROM payment_modes WHERE `ID`="'
+	$sql='SELECT `ID`, `CODE`, `NAME`, `BACK_NAME`, `FLAGS`,`ACTIVE`, `SYSTEM`, `DISPLAY_ORDER` FROM payment_mode WHERE `ID`="'
  	.$id.'";';
  $data = $pdo->query($sql);
  $data->setFetchMode(PDO::FETCH_ASSOC);
