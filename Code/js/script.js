@@ -21,3 +21,4 @@ $(document).ready(function(){
     $("#calculatrice").html(data);
   });
 });
+ 

@@ -168,3 +168,7 @@ function tva_categorie() {
     xmlhttp.open("GET","../script/taxcategories.php",true);
     xmlhttp.send();
 }
+function update(idTicketLine) {
+    
+    
+}

@@ -25,7 +25,7 @@ $exist=$pdo->query($sql);
 	$sql="INSERT INTO `".$dernierebase."`.`ticket_line` (`id`, `ticket_id`, `product_id`, `attributesetinstance_id`, `tax_id`, `line`, `quantity`, `price`, `discount_rate`, `attributes`, `product_label`) 
 	VALUES (:id, :idticket,:idproduct, :i, :tax, :line, :quantity, :price, :discount, :attribut, :product);";
 $data = $pdo->prepare($sql);
-$data->execute(array(
+$pdo->execute(array(
     "id" => "NULL",
     "idticket" => $idticket,
     "idproduct" => $idProduct,
@@ -38,6 +38,8 @@ $data->execute(array(
     "attribut" => "NUL",
     "product" => "NULL"
 ));
+
+echo $data;
 
 header('Location: ' . $_SERVER['HTTP_REFERER'] );
 
