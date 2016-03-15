@@ -1,6 +1,6 @@
 
 function showClients() {
-    
+    var xmlhttp;
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -18,6 +18,7 @@ function showClients() {
 }
 
 function showProducts(id) {
+    var xmlhttp;
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -36,6 +37,7 @@ function showProducts(id) {
 
 
 function showCategories() {
+    var xmlhttp;
     
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -54,8 +56,8 @@ function showCategories() {
 }
 
 
-function showTicket(idTicket) {
-    
+function showTicket() {
+    var xmlhttp;
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -68,11 +70,12 @@ function showTicket(idTicket) {
             document.getElementById("ticketProduits").innerHTML = xmlhttp.responseText;
         }
     };
-    xmlhttp.open("GET","../script/ticketline.php?idticket="+idTicket,true);
+    xmlhttp.open("GET","../script/ticketline.php",true);
     xmlhttp.send();
 }
 
-function addProduct(idPdt,idTicket) {
+function addProduct(idProduct,idTicket) {
+    var xmlhttp;
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -81,11 +84,13 @@ function addProduct(idPdt,idTicket) {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     
-    xmlhttp.open("GET","../script/ajoutProduit.php?idProduit="+idPdt+"&idTicket="+idTicket, true);
+    xmlhttp.open("GET","../script/ajoutProduit.php?idTicket="+idTicket+"&idProduct="+idProduct,true);
     xmlhttp.send();
 }
 
-function totalTicket(idTicket){
+function totalTicket(){
+    var xmlhttp;
+    console.info("totalTicket");
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -95,14 +100,18 @@ function totalTicket(idTicket){
     }
        xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            console.info("setting total");
+            console.info("actual content" + document.getElementById("total").innerHTML);
+            console.info("new content : "+  xmlhttp.responseText);
             document.getElementById("total").innerHTML = xmlhttp.responseText;
         }
     };
-    xmlhttp.open("GET","../script/totalTicket.php?idticket="+idTicket,true);
+    xmlhttp.open("GET","../script/totalTicket.php",true);
     xmlhttp.send();
 }
 
 function disconnect() {
+    var xmlhttp;
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -115,23 +124,31 @@ function disconnect() {
 }
 
 function paymentMode(){
+
+    console.info("paymentMode")
+    var xmlhttp;
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
+     xmlhttp = new XMLHttpRequest();
     } else {
         // code for IE6, IE5
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-   xmlhttp.onreadystatechange = function() {
+   xmlhttp.onreadystatechange = function() { 
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            console.info("setting paymentMode");
+            console.info("actual content" + document.getElementById("payement").innerHTML);
+            console.info("new content : "+  xmlhttp.responseText);
             document.getElementById("payement").innerHTML = xmlhttp.responseText;
         }
+        console.info(xmlhttp.readyState);
     };
     xmlhttp.open("GET","../script/paiementMode.php?",true);
     xmlhttp.send();
 }
 
 function paiementReturn(id){
+    var xmlhttp;
 if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -141,6 +158,7 @@ if (window.XMLHttpRequest) {
     }
 
  xmlhttp.onreadystatechange = function() {
+
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             document.getElementById("backname").innerHTML = xmlhttp.responseText;
         }
@@ -151,6 +169,7 @@ if (window.XMLHttpRequest) {
 }
 
 function tva_categorie() {
+    var xmlhttp;
     
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -168,6 +187,7 @@ function tva_categorie() {
     xmlhttp.send();
 }
 function updateTicket(idTicketLine,nb) {
+    console.log("test");
      if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -181,17 +201,5 @@ function updateTicket(idTicketLine,nb) {
         }
     };
     xmlhttp.open("GET","../script/updateTicket.php?nb="+nb+"&idTicketLine="+idTicketLine,true);
-    xmlhttp.send();
-}
-function closeTicket(idTicket) {
-
-    if (window.XMLHttpRequest) {
-        // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
-    } else {
-        // code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.open("GET","../script/closeTicket.php?idTicket="+idTicket,true);
     xmlhttp.send();
 }

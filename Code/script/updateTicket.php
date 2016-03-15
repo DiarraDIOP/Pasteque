@@ -7,7 +7,6 @@ require '../config/config.php';
 	
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	$data=$pdo->prepare("UPDATE `pasteque`.`ticket_line` SET `quantity` = '".$nb."' WHERE `ticket_line`.`id` ='"+$idticket+"';");
-	$exe=$data->execute();
+	$data=$pdo->query("UPDATE `pasteque`.`ticket_line` SET `quantity` = '".$nb."' WHERE `ticket_line`.`id` ='"+$idticket+"';");
 	 header('Location: ' . $_SERVER['HTTP_REFERER'] );
 ?>

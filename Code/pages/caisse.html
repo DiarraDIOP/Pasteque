@@ -38,11 +38,11 @@
         <script type="text/javascript" src="../js/database_script.js"></script>
         <script type="text/javascript" src="../js/calculatrice.js"></script>
         <link rel="stylesheet" media="screen, print, handheld" type="text/css" href="../dist/css/calculatrice.css" />
-    
+        
 
         
     </head>
-<body onload="paymentMode();showTicket('1')">
+<body >
 
     <div id="wrapper">
         <!-- Navigation -->
@@ -190,20 +190,19 @@
  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 
 <script type="text/javascript">
+        $(document).ready(function() {
+                showTicket();
+                paymentMode(); 
+                totalTicket();
+            });
+ 
             $(document).ready(function() {
                 var calculatrice = new Calculator();
                 calculatrice.run();
             });
-/*
-            $(function(){
-      setInterval(function(){
-         $(".slideshow ul").animate({marginLeft:-350},800,function(){
-            $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
-         })
-      }, 3500);
-   });*/
-                document.getElementById('calc').onload=initialiser_calc('calc');
-            
+            document.getElementById('calc').onload=initialiser_calc('calc');
+
+
             </script>
 
 </body>

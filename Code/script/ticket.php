@@ -1,13 +1,38 @@
 <?php
 
 require '../config/config.php'; 
+	
+	session_start();
+
+
+	 $idCat = $_GET['id'];
+	 $idCaisse = 0;
+	 $idTicket = 0;
+
+	 //recup de la dernière caisse ouverte liée au user connecté
+	 $sql="SELECT distinct id FROM `cash` WHERE `open_cash`= 1 ";
+	 $data = $pdo->query($sql);
+	 $data->setFetchMode(PDO::FETCH_ASSOC);	
+	 if($row = $data->fetch()){
+		$idCaisse = $row['id'];
+	 }
+	
+	 //recup du ticket ouvert dans la caisse
+	 $sql="SELECT distinct t.`id` FROM `ticket`t,`receipt`r, `cash` c WHERE t.`receipt_id`= r.`id` AND r.`cash_id` = ".$idCaisse . " AND t.`status`= 1 ";
+	 $data = $pdo->query($sql);
+	 $data->setFetchMode(PDO::FETCH_ASSOC);	
+	 if($row = $data->fetch()){
+		$idTicket = $row['id'];
+	 }
+
+
 
 	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	 $id = $_GET['id'];
 	 
 	 $sql="SELECT `ID`, `TYPE`, `RECEIPT_ID`, `USER_ID`, `CUSTOMER_ID`, `STATUS`, `CUSTOMER_COUNT`, `TARIFFAREA_ID`, `DISCOUNT_RATE`, 
-	 `DISCOUNTPROFILE_ID` FROM ticket WHERE `ID`='".$id."';";
+	 `DISCOUNTPROFILE_ID` FROM ticket WHERE `ID`='".$idTicket."';";
 	 $data = $pdo->query($sql);
 	 $data->setFetchMode(PDO::FETCH_ASSOC);
 	 $ticket= array();

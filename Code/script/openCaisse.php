@@ -2,6 +2,7 @@
 
 require '../config/config.php'; 
 
+session_start();
 
 	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -10,14 +11,16 @@ require '../config/config.php';
 
 	 //insérer un recu dans caisse nouvellement créée
 	 //mysql_insert_id() ==> dernier id générée 
-	 $idcaisse = mysql_insert_id();
+	 $idcaisse = $pdo->lastInsertId();
+
+	 $_SESSION['id_caisse'] = $idcaisse;
 	 $pdo->query("INSERT INTO ".$dernierebase.".`receipt` (`id`, `cash_id`, `display_id`, `date`, `attributes`) VALUES (NULL, '".$idcaisse."', '', '', NULL);");
 
 	 //insérer un ticket dans le recu créé avec le statut 1 => ouvert, 0=>fermé
-	  $idreceipt = mysql_insert_id();
+	  $idreceipt = $pdo->lastInsertId();
+
 	  $pdo->query("INSERT INTO ".$dernierebase.".`ticket` (`id`, `receipt_id`, `user_id`, `customer_id`, `tariffarea_id`, `discountprofile_id`, `type`, `date`, `status`, `customer_count`, `discount_rate`) VALUES (NULL, '".$idreceipt."', NULL, NULL, NULL, NULL, '', NULL, '1', NULL, '');");
-      $idticket = mysql_insert_id();
-      //mettre le nbre de tickets ouverts en global
+      $idticket = $pdo->lastInsertId();
 
 	 header('Location: ../pages/caisse.html');
 ?>
