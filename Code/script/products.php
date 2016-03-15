@@ -5,6 +5,7 @@ require '../config/config.php';
 	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	 $idCat = $_GET['id'];
+	 
 	 $idCaisse = 0;
 	 $idTicket = 0;
 
@@ -17,7 +18,8 @@ require '../config/config.php';
 	 }
 	
 	 //recup du ticket ouvert dans la caisse
-	 $sql="SELECT distinct t.`id` FROM `ticket`t,`receipt`r, `cash` c WHERE t.`receipt_id`= r.`id` AND r.`cash_id` = ".$idCaisse . " AND t.`status`= 1 ";
+	 $sql="SELECT distinct t.`id` FROM `ticket` t,`receipt` r, `cash` c WHERE t.`receipt_id`= r.`id` AND r.`cash_id` = ".$idCaisse . " AND t.`status`= 1 ";
+
 	 $data = $pdo->query($sql);
 	 $data->setFetchMode(PDO::FETCH_ASSOC);	
 	 if($row = $data->fetch()){
