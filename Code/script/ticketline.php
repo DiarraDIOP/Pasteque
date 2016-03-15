@@ -21,7 +21,7 @@ require '../config/config.php';
 			$data1->setFetchMode(PDO::FETCH_ASSOC);
 			foreach($data1 as $row1)
 			{
-				print "<li>". $row1['NAME'] ." <input type='number' id='n' value='".$row['QUANTITY']."' onChange='updateTicket(".$row['ID'].")' step='1' min='0'/></li>";
+				print "<tr><td>". $row1['NAME'] ."</td><td> <input type='number' id='quantity_".$row['ID']."' value='".$row['QUANTITY']."' onchange='updateTicket(".$row['ID'].",this.value)' style='float:left;' step='1' min='0' width='5px'/></td></tr>";
 			}
 	}
 
