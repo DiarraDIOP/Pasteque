@@ -63,6 +63,10 @@ HTML;
 			echo " Echec de connexion " ;
 		}        
 	}
+
+	public function id() {
+		return $this->_id;
+	}
 }
 
 

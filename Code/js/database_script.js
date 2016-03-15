@@ -72,7 +72,7 @@ function showTicket(idTicket) {
     xmlhttp.send();
 }
 
-function addProduct(idTicket,idProduct) {
+function addProduct(idPdt,idTicket) {
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -81,7 +81,7 @@ function addProduct(idTicket,idProduct) {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     
-    xmlhttp.open("GET","../script/ajoutProduit.php?idticket="+idTicket+"&idProduct="+idProduct,true);
+    xmlhttp.open("GET","../script/ajoutProduit.php?idProduit="+idPdt+"&idTicket="+idTicket, true);
     xmlhttp.send();
 }
 
@@ -103,7 +103,6 @@ function totalTicket(idTicket){
 }
 
 function disconnect() {
-
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
