@@ -4,7 +4,7 @@ $user='root';
 $pass='';
 $serveur='localhost';
 
-$dernierebase='pasteque';
+$dernierebase='pasteque_new';
 try
 {
 	$pdo = new PDO("mysql:host=$serveur;dbname=$dernierebase;",$user,$pass); 

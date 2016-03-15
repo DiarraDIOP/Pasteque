@@ -6,7 +6,7 @@
  $idCodeBarre = intval($_GET['idCodeBarre']);
 
  	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
- 	 $sql="SELECT * FROM product WHERE `CODE` LIKE '%".$idCodeBarre."%'";
+ 	 $sql="SELECT * FROM product WHERE `barcode` LIKE '%".$idCodeBarre."%'";
  	 $data = $pdo->query($sql);
  	 $data->setFetchMode(PDO::FETCH_ASSOC);
  
@@ -17,7 +17,7 @@
  
  	foreach($data as $row)
  	{
- 		print "<li>   <a href='#' onclick=''> <img src='data:image/jpeg;base64,".base64_encode($row['IMAGE'])."' width='50'> - ".$row['NAME']." </a></li>";
+ 		print "<li>   <a href='#' onclick=''> <img src='data:image/jpeg;base64,".base64_encode($row['image'])."' width='50'> - ".$row['name']." </a></li>";
  	}
 
   

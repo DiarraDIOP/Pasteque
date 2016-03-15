@@ -49,12 +49,12 @@ HTML;
 	public function connexion($_name, $_pass, $pdo){
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  
-	$data = $pdo->query("SELECT * FROM people where NAME = '".$_name."' AND APPPASSWORD = '".$_pass."'");
+	$data = $pdo->query("SELECT * FROM fos_user where username = '".$_name."' AND password = '".$_pass."'");
  	$data->setFetchMode(PDO::FETCH_ASSOC);
 
 		if($row = $data->fetch()){
-			$this->_name = $row['NAME'];
-		 	$this->_password = $row['APPPASSWORD'];
+			$this->_name = $row['username'];
+		 	$this->_password = $row['password'];
 		 	return true;
 		}
 		else{

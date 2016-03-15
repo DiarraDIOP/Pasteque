@@ -11,7 +11,7 @@ require '../config/config.php';
 
    foreach($data as $row)
 {
-    print "<option>".$row[NAME]."</option>";
+    print "<option>".$row[rate]."</option>";
 }
 
 ?>
