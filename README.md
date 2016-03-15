@@ -21,6 +21,6 @@ Un seul objectif: La refonte Graphique de l'Interface Pastèque en HTML5 (côté
 - Réalisations de scripts afin d'interagir avec la base de donnée test et rafiner nos affichages.
 
 Note:
-MCD Base de données disponible: [ici](https://github.com/DiarraDIOP/Pasteque/tree/master/Code/bdd):
-Logiciel utilisé pour le reverse engineering: [ici](https://github.com/DiarraDIOP/Pasteque/tree/master/Code/bdd):
-Plus d'info dans le Wiki
+- MCD Base de données disponible: [ici](https://github.com/DiarraDIOP/Pasteque/tree/master/Code/bdd):
+- Logiciel utilisé pour le reverse engineering: [ici](https://github.com/DiarraDIOP/Pasteque/tree/master/Code/bdd):
+- Plus d'info dans le Wiki
