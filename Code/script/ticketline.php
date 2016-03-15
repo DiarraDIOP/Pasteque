@@ -25,6 +25,5 @@ require '../config/config.php';
 			}
 	}
 
-echo " <script>totalTicket('".$id."');</script>";
 
 ?>
