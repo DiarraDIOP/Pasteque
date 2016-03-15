@@ -20,10 +20,24 @@ $exist=$pdo->query($sql);
 		$taxe=$pdo->query($sql1);
 		
 	}*/
-
-	$sql="INSERT INTO ".$dernierebase.".ticket_line (`TICKET_ID`, `LINE`, `PRODUCT_ID`, `QUANTITY`, `PRICE`, `TAX_ID`, `DISCOUNT_RATE`, `ATTRIBUTES`) 
-	VALUES ('".$ticket."', NULL, '".$idProduct."', '1', '0', '000', '0', '0')";
-$data = $pdo->query($sql);
+/*$sql="INSERT INTO `".$dernierebase."`.`ticket_line` (`id`, `ticket_id`, `product_id`, `attributesetinstance_id`, `tax_id`, `line`, `quantity`, `price`, `discount_rate`, `attributes`, `product_label`) 
+	VALUES (NULL, '".$idticket."', '".$idProduct."', '1', '1', '1', '1', '5', '0', NULL, NULL);";*/
+	$sql="INSERT INTO `".$dernierebase."`.`ticket_line` (`id`, `ticket_id`, `product_id`, `attributesetinstance_id`, `tax_id`, `line`, `quantity`, `price`, `discount_rate`, `attributes`, `product_label`) 
+	VALUES (:id, :idticket,:idproduct, :i, :tax, :line, :quantity, :price, :discount, :attribut, :product);";
+$data = $pdo->prepare($sql);
+$data->execute(array(
+    "id" => "NULL",
+    "idticket" => $idticket,
+    "idproduct" => $idProduct,
+    "i" => "1",
+    "tax" => "1",
+    "line" => "1",
+    "quantity" => "1",
+    "price" => "1",
+    "discount" => "0",
+    "attribut" => "NUL",
+    "product" => "NULL"
+));
 
 header('Location: ' . $_SERVER['HTTP_REFERER'] );
 

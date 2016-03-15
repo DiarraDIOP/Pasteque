@@ -16,7 +16,7 @@ require '../config/config.php';
 	$name= addslashes($row['NAME']);
     print "<li><figure>
                 <a onclick='paiementReturn(\"".htmlspecialchars($id,ENT_QUOTES)."\")'>
-                <figcaption style='font-size:14px'>".$name."</figcaption></a>
+                <figcaption style='font-size:14px'> <input type='button' value='   ".$name."   '/>  </figcaption></a>
            </figure></li>";
 
 }

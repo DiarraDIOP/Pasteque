@@ -28,5 +28,5 @@ require '../config/config.php';
 		$result=($row['PRICE']*$row['QUANTITY'])+$rate;
 		$total=$total+$result;
 	}
-	print "<output type='text'>".$total."</output>";
+	print "<label type='text'>TOTAL : ".$total."</label>";
 ?>

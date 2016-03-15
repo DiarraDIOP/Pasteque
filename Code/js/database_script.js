@@ -28,7 +28,6 @@ function showProducts(id) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             document.getElementById("product_"+id).innerHTML = xmlhttp.responseText;
-            console.log("id categorie (products): "+id);
         }
     };
     xmlhttp.open("GET","../script/products.php?id="+id, true);
@@ -81,6 +80,7 @@ function addProduct(idTicket,idProduct) {
         // code for IE6, IE5
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
+    
     xmlhttp.open("GET","../script/ajoutProduit.php?idticket="+idTicket+"&idProduct="+idProduct,true);
     xmlhttp.send();
 }
