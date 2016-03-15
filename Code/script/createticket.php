@@ -2,55 +2,18 @@
 
 require '../config/config.php'; 
 
-/*
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-function randomAlphaID($int){
-	$characters = "abcdefghijklmnopqrstuvwxyz0123456789";
-	$string = "";
-	 for ($i = 0; $i < $int; $i++) {
-	      $string .= $characters[rand(0, strlen($characters) - 1)];
-	 }
-	 return $string;
-}
+	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	 //variable globale avec l'ID de la caisse 
+	 $idcaisse = 0;
 
-function randomID($int){
-	$characters = "0123456789";
-	$string = "";
-	 for ($i = 0; $i < $int; $i++) {
-	      $string .= $characters[rand(0, strlen($characters) - 1)];
-	 }
-	 return $string;
-}
- 	
- 	 $id = randomID(32);
-	 $sql="SELECT MAX(`TICKETID`) as 'idt' FROM tickets ;";
-	 $ticket = $pdo->query($sql);
-	 $ticket->setFetchMode(PDO::FETCH_ASSOC);
-	
-	if($row = $ticket->fetch()){
-		$i=intval($row['idt'])+1;
-		print $id."       -            ";
-		print $i;
+	 //insérer un nouveau recu dans caisse nouvellement créée
+	 $pdo->query("INSERT INTO ".$dernierebase.".`receipt` (`id`, `cash_id`, `display_id`, `date`, `attributes`) VALUES (NULL, '".$idcaisse."', '', '', NULL);");   
+	  $idreceipt = mysql_insert_id();
 
-		//insertion closecash
+	 //insérer un ticket dans le recu créé avec le statut 1 => ouvert, 0=>fermé
+	  $pdo->query("INSERT INTO ".$dernierebase.".`ticket` (`id`, `receipt_id`, `user_id`, `customer_id`, `tariffarea_id`, `discountprofile_id`, `type`, `date`, `status`, `customer_count`, `discount_rate`) VALUES (NULL, '".$idreceipt."', NULL, NULL, NULL, NULL, '', NULL, '1', NULL, '');");
+      $idticket = mysql_insert_id();
 
-		$cc="SELECT MAX(`HOTSEQUENCE`) as 'idt' FROM closedcash ;";
-		$ccash = $pdo->query($cc);
-		$ccash->setFetchMode(PDO::FETCH_ASSOC);
-		$pdo->query("INSERT INTO ".$dernierebase.".closedcash (`MONEY`, `CASHREGISTER_ID`, `HOSTSEQUENCE`, `DATESTART`, `DATEEND`, `OPENCASH`, `CLOSECASH`, `EXPECTEDCASH`) VALUES ('".randomAlphaID(36)."', '1', '".randomID(3)."', NULL, NULL, NULL, NULL, NULL)");
-		
-		//insertion receipt
-		//à modifier
-
-		$sql2="SELECT MAX(`HOTSEQUENCE`) as 'idt' FROM closedcash ;";
-		$ccash = $pdo->query($sql2);
-		$ccash->setFetchMode(PDO::FETCH_ASSOC);
-		$pdo->query("INSERT INTO ".$dernierebase.".closedcash (`MONEY`, `CASHREGISTER_ID`, `HOSTSEQUENCE`, `DATESTART`, `DATEEND`, `OPENCASH`, `CLOSECASH`, `EXPECTEDCASH`) VALUES ('".randomAlphaID(36)."', '1', '".randomID(3)."', NULL, NULL, NULL, NULL, NULL)");
-		
-
-		$pdo->query("INSERT INTO ".$dernierebase.".tickets (`ID`, `TICKETTYPE`, `TICKETID`, `PERSON`, `CUSTOMER`, `STATUS`, `CUSTCOUNT`, `TARIFFAREA`, `DISCOUNTRATE`, `DISCOUNTPROFILE_ID`) VALUES ('".$id."', '0', '".$i."', '', NULL, '0', NULL, NULL, '0', NULL);");
-
-	 //header('Location: ../pages/caisse.html' );
-	}*/
+	 header('Location: ../pages/caisse.html');
 ?>

@@ -2,7 +2,8 @@
 
 class Utilisateur {
 	private   $_name;
-	private   $_password;		
+	private   $_password;	
+	private   $_id;	
 	
 	public function affichage() {
 		return "<div>
@@ -55,6 +56,7 @@ HTML;
 		if($row = $data->fetch()){
 			$this->_name = $row['username'];
 		 	$this->_password = $row['password'];
+		 	$this->_id = $row['id'];
 		 	return true;
 		}
 		else{

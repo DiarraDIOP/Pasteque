@@ -4,7 +4,8 @@ require '../config/config.php';
 
 	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$id = $_GET['id'];
+	 $id = $_GET['id'];
+	 
 	 $sql="SELECT `ID`, `TYPE`, `RECEIPT_ID`, `USER_ID`, `CUSTOMER_ID`, `STATUS`, `CUSTOMER_COUNT`, `TARIFFAREA_ID`, `DISCOUNT_RATE`, 
 	 `DISCOUNTPROFILE_ID` FROM ticket WHERE `ID`='".$id."';";
 	 $data = $pdo->query($sql);

@@ -1,0 +1,17 @@
+<?php
+
+require '../config/config.php'; 
+
+$idticket = $_GET['idticket']; 
+$idproduct = $_GET['idproduct'];
+$tax = $_GET['taxID']; 
+
+
+	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+	 //if du nb tickets ouverts à tester d'abord
+	 //modifier le statut de la caisse à "fermé"
+	  $pdo->query("INSERT INTO ".$dernierebase.".`ticket_line` (`id`, `ticket_id`, `product_id`, `attributesetinstance_id`, `tax_id`, `line`, `quantity`, `price`, `discount_rate`, `attributes`, `product_label`) VALUES (NULL, '".$idticket."', '".$idproduct."', NULL, NULL, '', '', '', '', NULL, NULL);");
+
+	 header('Location: ../pages/caisse.html');
+?>
