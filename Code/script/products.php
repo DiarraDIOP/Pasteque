@@ -29,8 +29,9 @@ require '../config/config.php';
 	 $data->setFetchMode(PDO::FETCH_ASSOC);	
 
 	foreach($data as $row)
-	{		
+	{	
 		print "<li><a href='#' onclick='addProduct(".$row['ID'].",".$idTicket.")'>". $row['NAME'] ." </a></li>";
+		print "<li><a href='#' onclick='showTicket(\"".htmlspecialchars($row['ID'],ENT_QUOTES)."\")'>". $row['NAME'] ." </a></li>";		
 	}
 
 ?>

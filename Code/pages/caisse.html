@@ -42,7 +42,7 @@
 
         
     </head>
-<body>
+<body onload="paymentMode();showTicket('1')">
 
     <div id="wrapper">
         <!-- Navigation -->
@@ -76,11 +76,11 @@
                 <h1 >Ticket</h1>                       
 
                 
-                    <ul id="ticketProduits"></ul>
+                    <table id="ticketProduits"></table>
                     
                     <output type="text" id="total">
                     </output>
-                     <button id="fermeture_caisse" onClick="" class="btn btn-danger btn-lg btn-block"> Fermer la caisse </button>     
+                         
     </div>
     <div class="col-sm-4">
       
@@ -203,11 +203,7 @@
       }, 3500);
    });*/
                 document.getElementById('calc').onload=initialiser_calc('calc');
-            window.onload=function(){
-  
-                showTicket('1');
-                /*paymentMode();*/
-};
+            
             </script>
 
 </body>
