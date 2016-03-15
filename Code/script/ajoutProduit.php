@@ -35,7 +35,7 @@ $pdo->execute(array(
     "quantity" => "1",
     "price" => "1",
     "discount" => "0",
-    "attribut" => "NUL",
+    "attribut" => "NULL",
     "product" => "NULL"
 ));
 

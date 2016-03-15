@@ -2,23 +2,18 @@
 
 require '../config/config.php'; 
 
+
 	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-$string = "";
- for ($i = 0; $i < 32; $i++) {
-      $string .= $characters[rand(0, strlen($characters) - 1)];
- }
+	 //variable globale avec l'ID de la caisse 
+	 $idcaisse = 0;
 
- $id = $string;
-	 $sql="SELECT MAX(`RECEIPT_ID`) FROM ticket ;";
-	 $ticket = $pdo->query($sql);
-	 $ticket->setFetchMode(PDO::FETCH_ASSOC);
-	
-	  foreach($ticket as $row)
-	{
-		$i=intval($row['RECEIPT_ID'])+1;
-	 $insert= $pdo->query("INSERT INTO ".$dernierebase.".ticket (`ID`, `TYPE`, `RECEIPT_ID`, `USER_ID`, `CUSTOMER_ID`, `STATUS`, `CUSTOMER_COUNT`, `TARIFFAREA_ID`, `DISCOUNT_RATE`, `DISCOUNTPROFILE_ID`) VALUES ('".$id."', '0', '".$i."', '', NULL, '0', NULL, NULL, '0', NULL);");
+	 //insérer un nouveau recu dans caisse nouvellement créée
+	 $pdo->query("INSERT INTO ".$dernierebase.".`receipt` (`id`, `cash_id`, `display_id`, `date`, `attributes`) VALUES (NULL, '".$idcaisse."', '', '', NULL);");   
+	  $idreceipt = mysql_insert_id();
 
-	 header('Location: ../pages/caisse.html' );
-	}
+	 //insérer un ticket dans le recu créé avec le statut 1 => ouvert, 0=>fermé
+	  $pdo->query("INSERT INTO ".$dernierebase.".`ticket` (`id`, `receipt_id`, `user_id`, `customer_id`, `tariffarea_id`, `discountprofile_id`, `type`, `date`, `status`, `customer_count`, `discount_rate`) VALUES (NULL, '".$idreceipt."', NULL, NULL, NULL, NULL, '', NULL, '1', NULL, '');");
+      $idticket = mysql_insert_id();
+
+	 header('Location: ../pages/caisse.html');
 ?>

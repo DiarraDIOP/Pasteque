@@ -12,6 +12,7 @@ require_once '../config/config.php';
         if($user->connexion($login, sha1($pass), $pdo)){
             session_start();
             $_SESSION['name'] = '$login';
+            $_SESSION['id'] = $user->_id;
             header('Location: ../pages/index.html');
         }
         else{

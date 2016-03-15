@@ -13,8 +13,7 @@ require '../config/config.php';
 	 $products= array();
 
 	   foreach($data as $row)
-	{
-		
+	{		
 		/*print "<li><a href='#' onclick='showTicket(\"".htmlspecialchars($row['ID'],ENT_QUOTES)."\")'>". $row['NAME'] ." </a></li>";
 		
 		print "<li><a href='#' onclick='showTicket(\"03498afd5fa28959f5975453ec8e3510\")'>". $row['NAME'] ." </a></li>";*/
