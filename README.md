@@ -1,3 +1,5 @@
+
+![Visual Timetabling](https://my.pasteque.coop/wp-content/themes/pasteque/img/logo.png)
 # Pasteque
 Nouvelle interface de vente en HTML5
 
