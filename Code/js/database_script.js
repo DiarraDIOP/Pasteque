@@ -169,7 +169,6 @@ function tva_categorie() {
     xmlhttp.send();
 }
 function updateTicket(idTicketLine,nb) {
-    console.log("test");
      if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -183,5 +182,17 @@ function updateTicket(idTicketLine,nb) {
         }
     };
     xmlhttp.open("GET","../script/updateTicket.php?nb="+nb+"&idTicketLine="+idTicketLine,true);
+    xmlhttp.send();
+}
+function closeTicket(idTicket) {
+
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.open("GET","../script/closeTicket.php?idTicket="+idTicket,true);
     xmlhttp.send();
 }

@@ -14,7 +14,7 @@ require '../config/config.php';
 	$id= addslashes($row['ID']);
 	$name= addslashes($row['NAME']);
 	
-    print "<li><a onclick='showProducts(\"".htmlspecialchars($id,ENT_QUOTES)."\")'>".$name ."</a></li><ul id='product_".$id."'></ul>";
+    print "<li><a onclick='showProducts(\"".htmlspecialchars($id,ENT_QUOTES)."\")'><img src='data:image/jpeg;base64,".base64_encode($row['IMAGE'])."' width='50'>".$name ."</a></li><ul id='product_".$id."'></ul>";
 
 }
 

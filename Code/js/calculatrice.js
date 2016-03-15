@@ -20,6 +20,7 @@ function f_calc(id,n)
                         $id(id+'_resultat').value=calcul;
                         calc_array[id][2]=calcul;
                         calc_array[id][3]=0;
+
                 }
         }
         else if(n=='+-')
@@ -48,6 +49,7 @@ function f_calc(id,n)
                 }
                 if(calc_array[id][0]=='=')
                 {
+
                         calc_array[id][2] = $id(id+'_resultat').value;
                         calc_array[id][3] = 0;
                 }
@@ -90,6 +92,7 @@ function add_calc(id,n)
         }
         if(calc_array[id][0]=='=')
         {
+
                 calc_array[id][2] = $id(id+'_resultat').value;
                 calc_array[id][3] = 0;
         }
@@ -150,7 +153,9 @@ function key_detect_calc(id,evt)
         }
         else if(evt.keyCode==13)
         {
+
                 f_calc(id,'=');
+
         }
         else if(evt.keyCode==46)
         {

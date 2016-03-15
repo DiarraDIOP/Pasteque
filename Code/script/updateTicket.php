@@ -2,13 +2,12 @@
 
 require '../config/config.php'; 
 
-	 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-	$idticket = $_GET['idTicketLine'];
 	$nb = $_GET['nb'];
+	$idticket = $_GET['idTicketLine'];
+	
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	$sql="UPDATE `pasteque`.`ticket_line` SET `quantity` = '".$nb."' WHERE `ticket_line`.`id` ='"+$idticket+"';";
-	$pdo->query($sql);
-
-	 header('Location: ../pages/caisse.html');
+	$data=$pdo->prepare("UPDATE `pasteque`.`ticket_line` SET `quantity` = '".$nb."' WHERE `ticket_line`.`id` ='"+$idticket+"';");
+	$exe=$data->execute();
+	 header('Location: ' . $_SERVER['HTTP_REFERER'] );
 ?>
